@@ -2,17 +2,20 @@ package Dancer::Template::MicroTemplate;
 
 use strict;
 use warnings;
+
+use Text::MicroTemplate::File;
 use Dancer::ModuleLoader;
 use Dancer::FileUtils 'path';
 
+use vars '$VERSION';
 use base 'Dancer::Template::Abstract';
+
+$VERSION = '0.1';
 
 my $_engine;
 
 sub init {
     my $self = shift;
-    die "Text::MicroTemplate is needed by Dancer::Template::MicroTemplate"
-      unless Dancer::ModuleLoader->load('Text::MicroTemplate::File');
 
     my $mt_cfg = {
         use_cache  => 0,
