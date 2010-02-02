@@ -10,7 +10,7 @@ use Dancer::FileUtils 'path';
 use vars '$VERSION';
 use base 'Dancer::Template::Abstract';
 
-$VERSION = '0.1';
+$VERSION = '0.01';
 
 my $_engine;
 
