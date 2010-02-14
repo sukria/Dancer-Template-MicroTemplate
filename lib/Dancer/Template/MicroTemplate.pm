@@ -19,10 +19,12 @@ sub init {
 
     my $mt_cfg = {
         use_cache  => 0,
-        tag_start  => '<%',
-        tag_end    => '%>',
         line_start => '%',
+        tag_start  => $self->config->{start_tag} || '<%',
+        tag_end    => $self->config->{stop_tag} || '%>',
+
     };
+
     my $path = path($self->{settings}{appdir}, 'views');
     $mt_cfg->{include_path} = [$path]
       if $self->{settings} && $self->{settings}{appdir};
